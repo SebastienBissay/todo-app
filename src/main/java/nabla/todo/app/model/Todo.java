@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -24,11 +25,14 @@ public class Todo implements Serializable {
     @GeneratedValue
     private Long id;
 
+    @NotNull
     private String username;
-
+    
+    @NotNull
     @Column(columnDefinition = "TEXT")
     private String description;
 
+    @NotNull
     private LocalDate targetDate;
 
     public void copy(Todo todoData) {

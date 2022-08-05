@@ -39,7 +39,7 @@
                         </form:form>
                     </td>
                     <td>
-                        <form:form action="/update-todo" method="GET" modelAttribute="todo">
+                        <form:form action="/delete-todo" method="GET" modelAttribute="todo">
                             <form:hidden path="id" value="${task.id}"/>
                             <input type="submit" value="Delete">
                         </form:form>
@@ -50,9 +50,14 @@
                     <td colspan="5">
                         <form:form action="/add-todo" method="GET">
                             <input type="submit" value ="Add new task to do" />
-                        </form:form>
+                            </form:form>
                         </td>
                 </tr>
         </table>
+        <security:authorize access="isAuthenticated()">
+            <form:form action="/logout" method="POST">
+                <input type="submit" value="Logout" />
+            </form:form>
+        </security:authorize>
     </body>
 </html>

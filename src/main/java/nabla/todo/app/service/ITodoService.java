@@ -14,5 +14,5 @@ public interface ITodoService {
     
     public Todo save(Todo todo);
     
-    public void delete(Todo todo);
+    public void delete(Long id);
 }

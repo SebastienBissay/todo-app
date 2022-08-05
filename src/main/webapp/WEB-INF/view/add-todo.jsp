@@ -18,11 +18,13 @@
         <h1>Create of update a task to do</h1>
         <hr/>
         <form:form method="POST"  action="/add-todo" modelAttribute="todo">
+            <form:hidden path="id" />
             <table>
                 <tr>
                     <td><label for = "targetDate">Target date (yyyy-MM-dd)</label></td>
                     <td><input type="date" name="targetDate" value="${todo.targetDate}" id="targetDate"/></td>
                 </tr>
+                <form:errors path="targetDate" />
                 <tr>
                     <td><form:label path = "username">User</form:label></td>
                     <td><form:input path = "username" /></td>

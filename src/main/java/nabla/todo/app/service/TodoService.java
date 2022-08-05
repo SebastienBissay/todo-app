@@ -34,8 +34,8 @@ public class TodoService implements ITodoService{
     }
 
     @Override
-    public void delete(Todo todo) {
-        this.todoRepository.deleteById(todo.getId());
+    public void delete(Long id) {
+        this.todoRepository.deleteById(id);
     }
     
 }
