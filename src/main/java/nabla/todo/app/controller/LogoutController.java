@@ -1,18 +1,24 @@
 package nabla.todo.app.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 
 /**
  *
  * @author Sebastien Bissay
  */
-public class LogoutController {
-
-    @RequestMapping(value = {"/logout"}, method = RequestMethod.POST)
-    public String logoutDo() {
+@Controller
+public class LogoutController extends SecurityContextLogoutHandler {
+    
+    @Override
+    @PostMapping("/logout")
+    public void logout(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
+        System.out.println("Adios");
         SecurityContextHolder.clearContext();
-        return "/login";
     }
 }
