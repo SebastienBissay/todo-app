@@ -1,9 +1,8 @@
-package nabla.tdo.app.service;
+package nabla.todo.app.service;
 
 import java.util.List;
-import java.util.Optional;
-import nabla.tdo.app.model.Todo;
-import nabla.tdo.app.repository.TodoRepository;
+import nabla.todo.app.model.Todo;
+import nabla.todo.app.repository.TodoRepository;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,15 +12,20 @@ import org.springframework.stereotype.Service;
 @Service
 public class TodoService implements ITodoService{
     
-    private TodoRepository todoRepository;
+    private final TodoRepository todoRepository;
 
     public TodoService(TodoRepository todoRepository) {
         this.todoRepository = todoRepository;
     }
 
     @Override
-    public List<Todo> findAll(Long id) {
-        return this.todoRepository.findAll();
+    public List<Todo> findAll() {
+        return this.todoRepository.findAllByOrderByTargetDateAsc();
+    }
+
+    @Override
+    public Todo findById(Long id) {
+        return this.todoRepository.findById(id).orElse(null);
     }
 
     @Override

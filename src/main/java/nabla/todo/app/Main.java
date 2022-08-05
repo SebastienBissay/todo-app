@@ -1,4 +1,4 @@
-package nabla.tdo.app;
+package nabla.todo.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

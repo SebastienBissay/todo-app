@@ -1,4 +1,4 @@
-package nabla.tdo.app.model;
+package nabla.todo.app.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;

@@ -1,4 +1,4 @@
-package nabla.tdo.app.security;
+package nabla.todo.app.security;
 
 import lombok.NoArgsConstructor;
 import org.springframework.context.annotation.Configuration;

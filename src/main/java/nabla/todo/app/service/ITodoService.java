@@ -1,15 +1,16 @@
-package nabla.tdo.app.service;
+package nabla.todo.app.service;
 
 import java.util.List;
-import java.util.Optional;
-import nabla.tdo.app.model.Todo;
+import nabla.todo.app.model.Todo;
 
 /**
  *
  * @author Sebastien Bissay
  */
 public interface ITodoService {
-    public List<Todo> findAll(Long id);
+    public List<Todo> findAll();
+    
+    public Todo findById(Long id);
     
     public Todo save(Todo todo);
     
